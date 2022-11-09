@@ -20,10 +20,10 @@ public class Main {
 
         OutputStream os = process.getOutputStream(); //ESTO ES PARA ESCRIBIR
         PrintStream ps = new PrintStream(os);
-        ps.println(frase);
+        ps.println(frase);//ESTO ENVIA AL JAR
         ps.flush();
 
-        InputStream is = process.getInputStream();
+        InputStream is = process.getInputStream(); //ESTO LEE
         InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8); //el utf es para temas de codificacion
         BufferedReader br = new BufferedReader(isr);
 
@@ -31,6 +31,8 @@ public class Main {
 
         while(!((linea = br.readLine()).isEmpty())){
                 System.out.println(linea);
+                //ME HACE UN POINT NULL EXCEPTION???
+
         }
 
         } catch (IOException e) {
